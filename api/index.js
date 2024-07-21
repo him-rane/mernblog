@@ -3,8 +3,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 
 const User = require("./models/User");
+const verifyToken = require("./middleware/verifyToken");
+
 require("dotenv").config();
 
 const app = express();
@@ -53,19 +56,23 @@ app.post("/login", async (req, res) => {
       return res.status(400).send("Invalid username or password");
     }
 
-    const jwtToken = await jwt.sign(
+    const token = await jwt.sign(
       { username, id: user._id },
       process.env.JWT_SECRET
     );
 
-    if (!jwtToken) {
-      return res.status(400).send("Invalid username or password");
+    if (!token) {
+      return res.status(401).send("Invalid username or password");
     }
 
-    res.cookie("token", jwtToken).json("Login Successfully");
+    res.json({ token });
   } catch (e) {
-    res.status(400).json(e);
+    res.status(401).json(e);
   }
+});
+
+app.get("/profile", verifyToken, (req, res) => {
+  res.json({ message: "this is a protected route", user: req.user });
 });
 
 // Start the server

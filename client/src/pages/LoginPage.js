@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/userContext";
 
 const LoginPage = () => {
+  const { setUserInfo } = useContext(UserContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -19,6 +21,9 @@ const LoginPage = () => {
         alert("Login failed");
         return;
       }
+      const data = await response.json();
+
+      localStorage.setItem("token", data.token);
 
       navigate("/");
     } catch (error) {
