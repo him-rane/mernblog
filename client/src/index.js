@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -7,19 +7,23 @@ import { UserContextProvider } from "./context/userContext";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { ThemeContextProvider } from "./context/ThemeContext";
+import ThemeProvider from "./components/Providers/ThemeProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <BrowserRouter>
     <ThemeContextProvider>
       <UserContextProvider>
-        <div className="container">
-          <div className="wrapper">
-            <Navbar />
-            <App />
-            <Footer />
+        <ThemeProvider>
+          <div className="container">
+            <div className="wrapper">
+              <Navbar />
+              <App />
+              <Footer />
+            </div>
           </div>
-        </div>
+        </ThemeProvider>
       </UserContextProvider>
     </ThemeContextProvider>
   </BrowserRouter>
