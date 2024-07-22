@@ -2,7 +2,7 @@ import React from "react";
 
 const Post = () => {
   return (
-    <div className="post">
+    <div className="wrapper post">
       <div className="image">
         <img
           src="https://cdn.mos.cms.futurecdn.net/M2bjTHjeAoLSqfXuizphcT-970-80.jpg.webp"
