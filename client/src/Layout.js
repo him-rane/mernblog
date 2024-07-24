@@ -1,13 +1,28 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Header from "./Header";
-
+import React, { useContext } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { UserContextProvider } from "./context/userContext";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
+import { ThemeContextProvider } from "./context/ThemeContext";
+import ThemeProvider from "./components/Providers/ThemeProvider";
 const Layout = () => {
   return (
-    <main>
-      <Header />
-      <Outlet />
-    </main>
+    <ThemeContextProvider>
+      <UserContextProvider>
+        <ThemeProvider>
+          <div className="container">
+            <div className="wrapper">
+              <Navbar />
+              <App />
+              <Footer />
+            </div>
+          </div>
+        </ThemeProvider>
+      </UserContextProvider>
+    </ThemeContextProvider>
   );
 };
 

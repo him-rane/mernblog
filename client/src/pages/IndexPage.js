@@ -1,15 +1,12 @@
 import React from "react";
-import Post from "../Post";
-
+import CategoryList from "../components/categoryList/CategoryList";
+import MainContent from "../components/mainContent/MainContent";
 const IndexPage = () => {
   return (
     <div>
-      <Post></Post>
-      <Post></Post>
-      <Post></Post>
-      <Post></Post>
-      <Post></Post>
-      <Post></Post>
+      <CategoryList></CategoryList>
+
+      <MainContent></MainContent>
     </div>
   );
 };

@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+}
+
+.recent {
+  flex: 3;
+}
+
+.popular {
+  flex: 1;
+}

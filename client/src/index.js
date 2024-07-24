@@ -8,23 +8,12 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { ThemeContextProvider } from "./context/ThemeContext";
 import ThemeProvider from "./components/Providers/ThemeProvider";
+import Layout from "./Layout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-    <ThemeContextProvider>
-      <UserContextProvider>
-        <ThemeProvider>
-          <div className="container">
-            <div className="wrapper">
-              <Navbar />
-              <App />
-              <Footer />
-            </div>
-          </div>
-        </ThemeProvider>
-      </UserContextProvider>
-    </ThemeContextProvider>
+    <Layout />
   </BrowserRouter>
 );
