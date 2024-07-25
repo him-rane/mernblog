@@ -1,102 +1,83 @@
-/* .container {
-  margin-bottom: 50px;
+.container {
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
-  gap: 50px;
-}
-.image {
-  width: 1.5vw;
-  flex: 1;
-
-}
-.image img {
-  flex-shrink: 0;
-}
-
-.text {
-  font-size: 1.5vw;
-  flex: 1;
-}
-.text p {
-  color: var(--softTextColor);
-} */
-
-/* card.module.css */
-
-/* Base styles */
-.container {
-  display: flex;
-  flex-direction: row;
+  height: 30vh;
   gap: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-
-  transition: all 0.3s ease;
 }
-
-.image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.text {
+.imageContainer {
   flex: 1;
+  height: inherit;
 }
 
-.detail {
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.details {
+  flex: 1;
+  height: inherit;
+
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.container .header {
+  font-size: small;
+}
+
+.date {
+  color: var(--softTextColor);
+  font-weight: 300;
+}
+
+.category {
+  text-transform: uppercase;
+  color: crimson;
+  font-weight: 300;
+}
+
+.details .decs {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: justify;
+  color: var(--softTextColor);
+}
+
+.details .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-bottom: 10px;
-  font-size: 0.9rem;
-  color: #666;
+  text-transform: capitalize;
+  color: var(--textColor);
 }
-
-h1 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-p {
-  font-size: 1rem;
-  color: #555;
-}
-
-a:hover {
+.details a {
+  font-weight: 700;
   text-decoration: underline;
+  color: var(--softTextColor);
 }
 
-/* Responsive styles */
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
+  .details .decs {
+    -webkit-line-clamp: 3;
+  }
+
+  .imageContainer img {
+    width: 100vw;
+    height: 250px;
+  }
+
   .container {
+    height: fit-content;
     flex-direction: column;
-    align-items: center;
-  }
-
-  .image,
-  .text {
-    width: 100%;
-    text-align: center;
-  }
-
-  .detail {
-    justify-content: center;
-    gap: 20px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .container {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 1.2rem;
-  }
-
-  p {
-    font-size: 0.9rem;
   }
 }

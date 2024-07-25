@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 15vh;
+}
+.category span {
+  text-transform: capitalize;
+  display: inline-block;
+
+  background-color: coral;
+  font-size: 10px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.container .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  font-weight: 500;
+
+  color: var(--softTextColor);
+}
+
+.container .footer {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.container .name {
+  text-transform: capitalize;
+  color: var(--textColor);
+}
+
+.container .date {
+  color: var(--softTextColor);
+}
