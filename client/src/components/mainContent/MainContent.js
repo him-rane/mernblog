@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../card/Card";
 import MiniCard from "../minCard/MiniCard";
 import styles from "./mainContent.module.css";
+import MiniCard2 from "../minCard2/MiniCard2";
 
 const MainContent = () => {
   return (
@@ -17,6 +18,11 @@ const MainContent = () => {
         <MiniCard></MiniCard>
         <MiniCard></MiniCard>
         <MiniCard></MiniCard>
+
+        <MiniCard2></MiniCard2>
+        <MiniCard2></MiniCard2>
+        <MiniCard2></MiniCard2>
+        <MiniCard2></MiniCard2>
       </div>
     </div>
   );
